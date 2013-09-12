@@ -1,0 +1,16 @@
+$textColor:#333;
+$bodyBackground:#ebebeb;
+$red: #f20;
+$blue: darken(complement($red),15%);
+$sans: "Helvetica Neue","Arial", sans-serif;
+
+$dropdownBackground: darken($bodyBackground,5%);
+$dropdownBorder: darken($dropdownBackground,10%);
+$dropdownLinkColor: lighten($textColor,20%);
+$dropdownLinkColorHover: $textColor;
+$dropdownLinkColorActive: $red;
+
+$tooltipColor:white;
+$tooltipBackground:transparentize(adjust-hue($blue,140deg),0.5);
+$tooltipArrowWidth:0.35em;
+$tooltipArrowColor:transparentize(adjust-hue($blue,140deg),0.5);

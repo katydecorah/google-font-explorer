@@ -1,0 +1,71 @@
+
+
+//
+// Dropdown menus
+// --------------------------------------------------
+
+
+// Use the .menu class on any <li> element within the topbar or ul.tabs and you'll get some superfancy dropdowns
+.dropup,
+.dropdown {
+  position: relative;
+}
+
+
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  font-size:0.8em;
+  min-width: 10em;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  background-color: $dropdownBackground;
+  border: 1px solid #ccc; // Fallback for IE7-8
+  border: 1px solid $dropdownBorder;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  border-radius:6px;
+  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+
+  // Links within the dropdown menu
+  > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    color: $dropdownLinkColor;
+    white-space: nowrap;
+    font-family:"Helvetica Neue","Arial", sans-serif;
+  }
+}
+
+// Hover/Focus state
+// -----------
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  text-decoration: none;
+  color: $dropdownLinkColorHover;
+}
+
+// Active state
+// ------------
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  text-decoration: none;
+  background:$bodyBackground;
+  color:$textColor;
+  outline: 0;
+}
