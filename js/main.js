@@ -6,6 +6,8 @@ var families = [];
 var visited = [];
 var love = [];
 
+$(".no-js").hide();
+
 // pushes all the font families to an array
 $.getJSON(url,function(json){
   $.each(json.items,function(i,type){
