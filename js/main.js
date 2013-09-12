@@ -74,7 +74,7 @@ function runFont(family) {
 
       }
     });
-  });
+});
 }
 
 // Make favorites ... work in progress
@@ -91,7 +91,7 @@ $(".heart").click(function(){
 function random() {
   $.getJSON(url,function(json){
     var count = json.items.length,
-        random = Math.ceil(Math.random() * count);
+    random = Math.ceil(Math.random() * count);
     $.each(json.items,function(i,type){
       if(i === random){
         var family = type.family;
@@ -145,7 +145,9 @@ $(".history").click(function(){
 });
 
 // Bootstrap Tooltips
-$('[data-rel=tooltip]').tooltip({ trigger: "hover", placement:"bottom" });
+if ($(window).width() > 500) {
+  $('[data-rel=tooltip]').tooltip({ trigger: "hover", placement:"bottom" });
+}
 
 
 
