@@ -106,7 +106,7 @@ function random() {
 }
 
 // Make content area editable
-$(".icon-edit").click(function(){
+$(".edit").click(function(){
   if($(this).hasClass("active")){
     $(this).removeClass("active");
     $("#content").removeAttr("contenteditable");
