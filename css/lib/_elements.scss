@@ -1,70 +1,40 @@
 
-.edit {
- max-width:30em;
- margin:0 auto 1em;
-}
-.edit {
-  float:right;
-  z-index:100;
-  position:relative;
-  display:block;
-  font-size:1.5em;
-  margin-right:0.25em;
-}
 .action {
-  color:lighten($textColor,25%);
-  cursor:pointer;
-  padding:0.25em;
-  border-radius:0.2em;
-  text-align:center;
-  margin:0.25em;
-  display:block;
+  top: 0;
+  right: 0.5em;
+  position: absolute;
+  cursor: pointer;
+  padding: 0.25em;
+  border-radius: 0.2em;
+  text-align: center;
+  margin: 0.25em;
+  display: block;
   &.active, &:hover {
-    color:white;
-    background:adjust-hue($blue,140deg);
+    color: white;
+    background: adjust-hue($blue,10deg);
   }
 }
 .hide {display:none;}
-.random {
-  float:right;
-  cursor:pointer;
-  font-size:1.5em;
-}
+
 
 .font {
-  padding:0.5em 2.5em;
-  display:block;
-  border:none;
-  border-radius:0.1em;
-  width:100%;
-  margin:0;
-  font-size:1em;
-  background:$blue;
-  border-radius:0.25em;
-  color:white;
+  max-height: 2em;
+  padding: 0.5em 2.5em;
+  display: block;
+  border: none;
+  border-radius: 0.1em;
+  width: 100%;
+  margin: 0;
+  font-size: 1em;
+  background: $blue;
+  border-radius: 0.25em;
+  color: white;
   &::-webkit-input-placeholder {
-    color:inherit;
+    color: inherit;
   }
   &:focus, &:hover {
-    color:transparentize(white,0.5);
-    background:lighten($blue,3%);
-    outline:none;
-  }
-}
-
-.variants {
-background:adjust-hue($blue,220deg);
-}
-.visited {
-  background:darken(adjust-hue($blue,220deg),5%);
-}
-.more, .history, .heart {
-  float:right;
-  font-size:1.5em;
-}
-[data-family] {
-  cursor:pointer;
-  &:hover {
-    color:lighten($textColor,5%);
+    color: transparentize(white,0.5);
+    background: lighten($blue,3%);
+    outline: none;
   }
 }

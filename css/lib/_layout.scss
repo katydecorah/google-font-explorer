@@ -1,34 +1,82 @@
 .container {
-  max-width: 35em;
+  max-width: $container;
   margin: 0 auto;
   position: relative;
+  @extend .clearfix;
+  @include breakpoint(medium) {
+    padding: 0 1em;
+  }
 }
+
 .navbar {
   background: $textColor;
   padding: 3em 0 2em;
   color: $bodyBackground;
   margin-bottom: 3em;
   @extend .clearfix;
-
-  h2 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0.75em 0 0.5em;
-  }
-  .variants, .visited {
-    font-weight: normal;
-    @extend small;
-    font-family: $sans;
-    color: black;
-    padding: 1em 2.5em 2em;
-    border-radius: 0.2em;
-    margin: 0.25em 0;
-  }
-  dt { font-weight:bold; width:8em; float:left;}
 }
+
+.main,.sidebar {
+  @include breakpoint(medium-up){ float: left; }
+}
+.main {
+  @include breakpoint(medium-up){
+    width: 65%;
+    margin-right: 5%;
+    padding: 0 2em 0 0;
+    border-right: .2em solid rgba($textColor,0.25);
+  }
+
+}
+.sidebar {
+  @include breakpoint(medium-up){
+    width: 30%;
+    padding: 2em 0 0 0;
+    border-top: none;
+  }
+  border-top: .2em solid rgba($textColor,0.25);
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+
+
+dt {
+  font-weight: bold;
+  width: 8em;
+  &.horizontal {
+    @include breakpoint(medium-up) { float: left; }
+  }
+}
+dd {
+  margin: 0 0 1em 0;
+  word-wrap: break-word;
+}
+
 
 .colophon {
   margin: 2em 0;
   @extend small;
   @extend .clearfix;
+}
+
+.btn {
+  display: inline-block;
+  background: $link-color;
+  padding: 0.3em 0.75em;
+  color: white;
+  //font-size: 1.25em;
+  margin-top: 0.25em;
+  border-radius: 0.2em;
+  &:hover {
+    color: white;
+    background: adjust-hue($link-color,10deg);
+  }
+}
+
+.history {
+  .link-history {
+    cursor: pointer;
+    @extend a;
+  }
 }

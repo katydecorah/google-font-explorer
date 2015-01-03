@@ -8,8 +8,17 @@ layout: default
 <div class="search">
 {% include search.html %}
 </div>
+</div>
+</div>
 <div class="container" id="content">
-{% include content.html %}
+  <div class="main">
+    {% include content.html %}
+  </div>
+  <aside class="sidebar">
+    <div id="variants"></div>
+    <h2>History</h2>
+    <ul id="visited" class="history"></ul>
+  </aside>
 </div>
 <div class="container">
 {% include colophon.html %}

@@ -21,9 +21,7 @@ $('#font').typeahead({
   updater:function (item) {
     runFont(item);
     $("#font").attr("placeholder",item);
-    $('html, body').animate(
-      {scrollTop:$('#content').position().top}, 'slow');
-    // return item; Nah, set as placeholder instead
+
   }
 });
 
@@ -40,23 +38,23 @@ function runFont(family) {
         $("style").remove();
 
         // Grabs family details
-        $(".variants").html("<dl><dt>Variants</dt><dd>" + type.variants + "</dd> <dt>Subsets</dt><dd>" + type.subsets + "</dd><dt>Version</dt><dd>" + type.version + "</dd><dt>Last Modified</dt><dd>" + type.lastModified + "</dd><dd>" + familyCSS + "</dd></dl>");
+        $("#variants").html("<dl><dt class='horizontal'>Variants</dt><dd>" + type.variants + "</dd> <dt class='horizontal'>Subsets</dt><dd>" + type.subsets + "</dd><dt class='horizontal'>Version</dt><dd>" + type.version + "</dd><dt class='horizontal'>Last Modified</dt><dd>" + type.lastModified + "</dd><dt>HTML</dt><dd><pre><code class='language-markup'>&lt;link href='"+familyCSS+"' rel='stylesheet' type='text/css'&gt;</code></pre></dd><dt>CSS</dt><dd><pre><code class='language-css'>font-family: '"+family+"', sans-serif;</code></pre></dd></dl><a href='http://www.google.com/fonts#UsePlace:use/Collection:"+familyPlus+"' class='btn'>View on Google Fonts</a>");
 
         // Grabs the Google Font
         $("head").append("<link href='"+ familyCSS +"' rel='stylesheet' type='text/css' class='style'>");
         $("body").css("font-family",family);
 
         // If family has italic or 700, allow it
-        if($(".variants").text().match('italic')){
+        if($("#variants").text().match('italic')){
           $("head").append("<style>em { font-style: italic; }");
         }
-        if($(".variants").text().match('700')){
+        if($("#variants").text().match('700')){
           $("head").append("<style>strong,h1,h2,h3 { font-weight: 700; }");
         }
-        else if($(".variants").text().match('800')){
+        else if($("#variants").text().match('800')){
           $("head").append("<style>strong,h1,h2,h3 { font-weight: 800; }");
         }
-        else if($(".variants").text().match('900')){
+        else if($("#variants").text().match('900')){
           $("head").append("<style>strong,h1,h2,h3 { font-weight: 900; }");
         }
 
@@ -64,9 +62,9 @@ function runFont(family) {
         visited.push( family );
         var visit="";
         $.each(visited, function(i, val) {
-          visit+= "<p class='link-history' data-family='"+ val +"'>" + val + "</p>";
+          visit+= "<li class='link-history' data-family='"+ val +"'>" + val + "</li>";
         });
-        $('.visited').html("<h2>History</h2>"+visit);
+        $('#visited').html(visit);
 
         // Creates link to view that font again
         $(".link-history").click(function(){
@@ -112,6 +110,7 @@ function random() {
 }
 
 // Make content area editable
+/*
 $(".edit").click(function(){
   if($(this).hasClass("active")){
     $(this).removeClass("active");
@@ -123,41 +122,18 @@ $(".edit").click(function(){
     $('html, body').animate(
       {scrollTop:$('#content').position().top}, 'slow');
   }
-});
+});*/
 
 // Picks a random font on click
 $(".random").click(function(){
   random();
 });
 
-// Toggles more information about the family
-$(".more").click(function(){
-  $(".variants").slideToggle();
-  if($(this).hasClass("active")){
-    $(this).removeClass("active");
-  }
-  else {
-    $(this).addClass("active");
-  }
-});
-
-// Toggles more information about the family
-$(".history").click(function(){
-  $(".visited").slideToggle();
-  if($(this).hasClass("active")){
-    $(this).removeClass("active");
-  }
-  else {
-    $(this).addClass("active");
-  }
-});
 
 // Bootstrap Tooltips not for mobile-ish
 if ($(window).width() > 800) {
   $('[data-rel=tooltip]').tooltip({ trigger: "hover", placement:"bottom" });
 }
-
-
 
 
 // Runs to fetch random font

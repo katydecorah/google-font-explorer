@@ -8,7 +8,8 @@ body {
   font-family: 'Libre Baskerville', serif;
   font-weight: 400;
   line-height: 1.45;
-  font-size: 18px;
+  @include breakpoint(medium-up) { font-size: 18px; }
+  font-size: 14px;
   color: $textColor;
   background: $bodyBackground;
 }
@@ -36,9 +37,9 @@ em, strong { font-style: normal}
 
 a {
   text-decoration: none;
-  color: $blue;
+  color: $link-color;
   &:hover {
-    color: darken($blue,5%);
+    color: lighten($link-color,5%);
   }
 }
 
@@ -47,3 +48,9 @@ ol, ul {
 }
 ol { list-style: decimal;}
 ul { list-style: square; }
+
+::selection {
+  background: $blue;
+  color: white;
+  text-shadow: none;
+}
