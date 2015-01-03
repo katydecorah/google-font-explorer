@@ -37,7 +37,7 @@ function runFont(family) {
 
         // Removes previous family and style
         $(".style").remove();
-        $("em,strong,h1,h2,h3").removeAttr("style");
+        $("style").remove();
 
         // Grabs family details
         $(".variants").html("<dl><dt>Variants</dt><dd>" + type.variants + "</dd> <dt>Subsets</dt><dd>" + type.subsets + "</dd><dt>Version</dt><dd>" + type.version + "</dd><dt>Last Modified</dt><dd>" + type.lastModified + "</dd><dd>" + familyCSS + "</dd></dl>");
@@ -48,10 +48,16 @@ function runFont(family) {
 
         // If family has italic or 700, allow it
         if($(".variants").text().match('italic')){
-          $("em").css("font-style","italic");
+          $("head").append("<style>em { font-style: italic; }");
         }
         if($(".variants").text().match('700')){
-          $("strong,h1,h2,h3").css("font-weight","700");
+          $("head").append("<style>strong,h1,h2,h3 { font-weight: 700; }");
+        }
+        else if($(".variants").text().match('800')){
+          $("head").append("<style>strong,h1,h2,h3 { font-weight: 800; }");
+        }
+        else if($(".variants").text().match('900')){
+          $("head").append("<style>strong,h1,h2,h3 { font-weight: 900; }");
         }
 
         // Save visited families
