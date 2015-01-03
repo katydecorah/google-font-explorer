@@ -1,7 +1,7 @@
 .container {
-  max-width:30em;
-  margin:0 auto;
-  position:relative;
+  max-width: 35em;
+  margin: 0 auto;
+  position: relative;
 }
 .navbar {
   background: $textColor;
@@ -11,23 +11,24 @@
   @extend .clearfix;
 
   h2 {
-    font-size:2em;
-    font-weight:bold;
-    margin:0.75em 0 0.5em;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.75em 0 0.5em;
   }
   .variants, .visited {
-    font-weight:normal;
-    font-size:0.85em;
-    font-family:$sans;
-    color:black;
-    padding:1em 2.5em 2em;
-    border-radius:0.2em;
-    margin:0.25em 0;
+    font-weight: normal;
+    @extend small;
+    font-family: $sans;
+    color: black;
+    padding: 1em 2.5em 2em;
+    border-radius: 0.2em;
+    margin: 0.25em 0;
   }
   dt { font-weight:bold; width:8em; float:left;}
 }
 
 .colophon {
-  margin:5em 0;
+  margin: 2em 0;
+  @extend small;
   @extend .clearfix;
 }
