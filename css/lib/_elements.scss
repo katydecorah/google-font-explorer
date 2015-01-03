@@ -51,20 +51,3 @@
     outline:none;
   }
 }
-
-.variants {
-background:adjust-hue($blue,220deg);
-}
-.visited {
-  background:darken(adjust-hue($blue,220deg),5%);
-}
-.more, .history, .heart {
-  float:right;
-  font-size:1.5em;
-}
-[data-family] {
-  cursor:pointer;
-  &:hover {
-    color:lighten($textColor,5%);
-  }
-}

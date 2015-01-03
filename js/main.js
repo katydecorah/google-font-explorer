@@ -66,7 +66,7 @@ function runFont(family) {
         $.each(visited, function(i, val) {
           visit+= "<p class='link-history' data-family='"+ val +"'>" + val + "</p>";
         });
-        $('.visited').html("<h2>History</h2>"+visit);
+        $('.visited').html(visit);
 
         // Creates link to view that font again
         $(".link-history").click(function(){
@@ -130,27 +130,6 @@ $(".random").click(function(){
   random();
 });
 
-// Toggles more information about the family
-$(".more").click(function(){
-  $(".variants").slideToggle();
-  if($(this).hasClass("active")){
-    $(this).removeClass("active");
-  }
-  else {
-    $(this).addClass("active");
-  }
-});
-
-// Toggles more information about the family
-$(".history").click(function(){
-  $(".visited").slideToggle();
-  if($(this).hasClass("active")){
-    $(this).removeClass("active");
-  }
-  else {
-    $(this).addClass("active");
-  }
-});
 
 // Bootstrap Tooltips not for mobile-ish
 if ($(window).width() > 800) {

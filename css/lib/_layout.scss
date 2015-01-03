@@ -3,6 +3,19 @@
   margin: 0 auto;
   position: relative;
 }
+.container-large {
+  @extend .container;
+  max-width: 60em;
+  @extend .clearfix;
+}
+.main,.sidebar { float: left; }
+.main {
+  width: 70%;
+}
+.sidebar {
+  width: 30%;
+}
+
 .navbar {
   background: $textColor;
   padding: 3em 0 2em;
@@ -15,15 +28,7 @@
     font-weight: bold;
     margin: 0.75em 0 0.5em;
   }
-  .variants, .visited {
-    font-weight: normal;
-    @extend small;
-    font-family: $sans;
-    color: black;
-    padding: 1em 2.5em 2em;
-    border-radius: 0.2em;
-    margin: 0.25em 0;
-  }
+
   dt { font-weight:bold; width:8em; float:left;}
 }
 
