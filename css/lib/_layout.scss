@@ -4,9 +4,9 @@
   position:relative;
 }
 .navbar {
-  background:$textColor;
-  padding:0.75em 0 2em;
-  color:$bodyBackground;
+  background: $textColor;
+  padding: 3em 0 2em;
+  color: $bodyBackground;
   margin-bottom: 3em;
   @extend .clearfix;
 
