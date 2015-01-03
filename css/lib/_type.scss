@@ -1,47 +1,41 @@
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 body {
-  font-size:100%;
-  line-height:1.618;
-  color:$textColor;
-  background:$bodyBackground;
+  font-size: 100%;
+  line-height: 1.618;
+  color: $textColor;
+  background: $bodyBackground;
 }
 h1, h2, h3 {
-  margin:1.5em auto 0.5em;
-  line-height:1.3;
+  margin: 1.5em auto 0.5em;
+  line-height: 1.3;
 }
 h1 {
-  font-size:2.25em;
-  max-width:13.5em;
+  font-size: 2.25em;
+  max-width: 13.5em;
 }
 h2 {
-  font-size:1.75em;
-  max-width:17.25em;
+  font-size: 1.75em;
+  max-width: 17.25em;
 }
 h3 {
-  font-size:1.25em;
-  text-transform:uppercase;
-  max-width:24.25em;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  max-width: 24.25em;
 }
 a {
-  text-decoration:none;
-  color:$blue;
+  text-decoration: none;
+  color: $blue;
   &:hover {
-    color:darken($blue,5%);
+    color: darken($blue,5%);
   }
 }
-p {margin-bottom:1em;}
+p {margin-bottom: 1em;}
 
 ol, ul {
   margin: 1em 0 1em 2.5em;
 }
-ol { list-style:decimal;}
-ul { list-style:square; }
-
-
-
-
-
-
+ol { list-style: decimal;}
+ul { list-style: square; }

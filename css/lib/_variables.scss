@@ -14,3 +14,14 @@ $tooltipColor:white;
 $tooltipBackground:transparentize(adjust-hue($blue,140deg),0.5);
 $tooltipArrowWidth:0.35em;
 $tooltipArrowColor:transparentize(adjust-hue($blue,140deg),0.5);
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}

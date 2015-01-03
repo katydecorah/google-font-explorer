@@ -29,10 +29,6 @@
   float:right;
   cursor:pointer;
   font-size:1.5em;
-  &:hover {
-    @include transition(transform 0.5s);
-    @include rotate(360deg);
-  }
 }
 
 .font {

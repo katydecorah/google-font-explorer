@@ -10,9 +10,9 @@
   z-index: 1000;
   display: block;
   visibility: visible;
-  @include opacity(0);
-  &.in     { @include opacity(80); }
-  &.bottom { margin-top:   3px; padding: 5px 0; }
+  opacity: 0;
+  &.in     { opacity: 80; }
+  &.bottom { margin-top: 3px; padding: 5px 0; }
 }
 
 // Wrapper for the tooltip content
