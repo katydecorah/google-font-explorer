@@ -8,15 +8,16 @@ layout: default
 <div class="search">
 {% include search.html %}
 </div>
-<div class="container-large" id="content">
+</div>
+</div>
+<div class="container" id="content">
   <div class="main">
     {% include content.html %}
   </div>
   <aside class="sidebar">
-    <h2>Details</h2>
-    <div class="variants"></div>
+    <div id="variants"></div>
     <h2>History</h2>
-    <div class="visited"></div>
+    <ul id="visited" class="history"></ul>
   </aside>
 </div>
 <div class="container">
