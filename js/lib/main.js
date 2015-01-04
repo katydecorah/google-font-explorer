@@ -510,12 +510,19 @@ var families = [];
 var visited = [];
 
 
-// pushes all the font families to an array
 $.getJSON(url,function(json){
+
+  // counts all the families
+  var countFamilies = json.items.length;
+  $("#count").text(countFamilies);
+
+  // pushes all the font families to an array
   $.each(json.items,function(i,type){
     families.push(type.family);
   });
 });
+
+
 
 // Bootstrap Typeahead
 $('#font-search').typeahead({
