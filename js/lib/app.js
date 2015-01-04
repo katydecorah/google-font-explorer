@@ -80,17 +80,8 @@ function runFont(family) {
 
       }
     });
-});
+  });
 }
-
-// Make favorites ... work in progress
-$(".heart").click(function(){
-  var loveIt = $("#font").attr("placeholder");
-  love.push(loveIt);
-  $(this).addClass("active");
-  //alert(love);
-});
-
 
 
 // Gets a random font
@@ -106,34 +97,14 @@ function random() {
       }
     });
   });
-  $(".heart").removeClass("active");
 }
 
-// Make content area editable
-/*
-$(".edit").click(function(){
-  if($(this).hasClass("active")){
-    $(this).removeClass("active");
-    $("#content").removeAttr("contenteditable");
-  }
-  else {
-    $(this).addClass("active");
-    $("#content").attr("contenteditable","true").focus();
-    $('html, body').animate(
-      {scrollTop:$('#content').position().top}, 'slow');
-  }
-});*/
+
 
 // Picks a random font on click
 $(".random").click(function(){
   random();
 });
-
-
-// Bootstrap Tooltips not for mobile-ish
-if ($(window).width() > 800) {
-  $('[data-rel=tooltip]').tooltip({ trigger: "hover", placement:"bottom" });
-}
 
 
 // Runs to fetch random font

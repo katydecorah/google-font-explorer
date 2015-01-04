@@ -3,10 +3,19 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['js/lib/bootstrap-dropdown.js', 'js/lib/bootstrap-typeahead.js','js/lib/app.js'],
+        dest: 'js/lib/main.js',
+      },
+    },
 
     uglify: {
       build: {
-        src: 'js/main.js',
+        src: 'js/lib/main.js',
         dest: 'js/main.min.js'
       }
     },
@@ -33,7 +42,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['js/*.js'],
-        tasks: ['uglify'],
+        tasks: ['concat','uglify'],
         options: {
           spawn: false,
         },
@@ -48,10 +57,11 @@ module.exports = function(grunt) {
     }
 
   });
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.registerTask('default', ['uglify','sass','autoprefixer','watch']);
+  grunt.registerTask('default', ['concat','uglify','sass','autoprefixer','watch']);
 
 };
