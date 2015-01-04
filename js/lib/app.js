@@ -21,7 +21,6 @@ $('#font').typeahead({
   updater:function (item) {
     runFont(item);
     $("#font").attr("placeholder",item);
-
   }
 });
 
@@ -32,13 +31,21 @@ function runFont(family) {
       if (type.family === family) {
         var familyPlus = family.replace(/\s/g, '+');
         var familyCSS = "http://fonts.googleapis.com/css?family=" + familyPlus + ":" + type.variants + "";
+        var details = $("#variants");
 
         // Removes previous family and style
         $(".style").remove();
         $("style").remove();
+        details.empty();
 
         // Grabs family details
-        $("#variants").html("<dl><dt class='horizontal'>Variants</dt><dd>" + type.variants + "</dd> <dt class='horizontal'>Subsets</dt><dd>" + type.subsets + "</dd><dt class='horizontal'>Version</dt><dd>" + type.version + "</dd><dt class='horizontal'>Last Modified</dt><dd>" + type.lastModified + "</dd><dt>HTML</dt><dd><pre><code class='language-markup'>&lt;link href='"+familyCSS+"' rel='stylesheet' type='text/css'&gt;</code></pre></dd><dt>CSS</dt><dd><pre><code class='language-css'>font-family: '"+family+"', sans-serif;</code></pre></dd></dl><a href='http://www.google.com/fonts#UsePlace:use/Collection:"+familyPlus+"' class='btn'>View on Google Fonts</a>");
+        details.append("<div class='detail-title horizontal'>Variants</div><div class='detail-data'>" + type.variants + "</div>");
+        details.append("<div class='detail-title horizontal'>Subsets</div><div class='detail-data'>" + type.subsets + "</div>");
+        details.append("<div class='detail-title horizontal'>Version</div><duv class='detail-data'>" + type.version + "</div>");
+        details.append("<div class='detail-title horizontal'>Last Modified</div><div class='detail-data'>" + type.lastModified + "</div>");
+        details.append("<div class='detail-title'>HTML</div><div class='detail-data'><pre><code class='language-markup'>&lt;link href='"+familyCSS+"' rel='stylesheet' type='text/css'&gt;</code></pre></div>");
+        details.append("<div class='detail-title'>CSS</div><div class='detail-data'><pre><code class='language-css'>font-family: '"+family+"', sans-serif;</code></pre></div>");
+        details.append("<a href='http://www.google.com/fonts#UsePlace:use/Collection:"+familyPlus+"' class='btn'>View on Google Fonts &rarr;</a>");
 
         // Grabs the Google Font
         $("head").append("<link href='"+ familyCSS +"' rel='stylesheet' type='text/css' class='style'>");

@@ -5,13 +5,14 @@
 
 
 body {
-  font-family: 'Libre Baskerville', serif;
+  font-family: $sans;
   font-weight: 400;
   line-height: 1.45;
   @include breakpoint(medium-up) { font-size: 18px; }
   font-size: 14px;
   color: $textColor;
   background: $bodyBackground;
+
 }
 
 h1, h2, h3 {
