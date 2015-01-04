@@ -2,7 +2,6 @@
   background: $textColor;
   padding: 2em 0;
   color: $bodyBackground;
-  //margin-bottom: 2em;
   @extend .clearfix;
   font-size: 1.5em;
 }
@@ -13,7 +12,7 @@ label {
   top: 0.4em;
   color: transparentize(white,0.5);
 }
-.action {
+.random {
   top: 0;
   right: 4%;
   position: absolute;
@@ -28,8 +27,11 @@ label {
     background: adjust-hue($blue,10deg);
   }
 }
+.search-container {
+  position: relative;
+}
 
-.font {
+.font-search {
   max-height: 2em;
   padding: 0.5em 2.5em;
   display: block;

@@ -508,9 +508,7 @@ var family = "";
 runFont(family);
 var families = [];
 var visited = [];
-var love = [];
 
-$(".no-js").hide();
 
 // pushes all the font families to an array
 $.getJSON(url,function(json){
@@ -520,11 +518,11 @@ $.getJSON(url,function(json){
 });
 
 // Bootstrap Typeahead
-$('#font').typeahead({
+$('#font-search').typeahead({
   source: families,
   updater:function (item) {
     runFont(item);
-    $("#font").attr("placeholder",item);
+    $("#font-search").attr("placeholder",item);
   }
 });
 
@@ -543,8 +541,18 @@ function runFont(family) {
         details.empty();
 
         // Grabs family details
-        details.append("<div class='detail-title horizontal'>Variants</div><div class='detail-data'>" + type.variants + "</div>");
-        details.append("<div class='detail-title horizontal'>Subsets</div><div class='detail-data'>" + type.subsets + "</div>");
+        details.append("<div class='detail-title'>Variants</div><ul class='list-variant'></ul>");
+        $(type.variants).each(function(index, item) {
+          $(".list-variant").append(
+            $(document.createElement('li')).text(item)
+          );
+        });
+        details.append("<div class='detail-title'>Subsets</div><ul class='list-subsets'></ul>");
+        $(type.subsets).each(function(index, item) {
+          $(".list-subsets").append(
+            $(document.createElement('li')).text(item)
+          );
+        });
         details.append("<div class='detail-title horizontal'>Version</div><div class='detail-data'>" + type.version + "</div>");
         details.append("<div class='detail-title horizontal'>Last Modified</div><div class='detail-data'>" + type.lastModified + "</div>");
         details.append("<div class='detail-title'>HTML</div><div class='detail-data'><pre><code class='language-markup'>&lt;link href='"+familyCSS+"' rel='stylesheet' type='text/css'&gt;</code></pre></div>");
@@ -555,18 +563,18 @@ function runFont(family) {
         $("head").append("<link href='"+ familyCSS +"' rel='stylesheet' type='text/css' class='style'>");
         $("body").css("font-family",family);
 
-        // If family has italic or 700, allow it
-        if($("#variants").text().match('italic')){
-          $("head").append("<style>em { font-style: italic; }");
+        // If family has italic or bold, allow it
+        if(details.text().match('italic')){
+          $("head").append("<style>.main em { font-style: italic; }");
         }
-        if($("#variants").text().match('700')){
-          $("head").append("<style>strong,h1,h2,h3 { font-weight: 700; }");
+        if(details.text().match('700')){
+          $("head").append("<style>.main strong,h1,h2,h3 { font-weight: 700; }");
         }
-        else if($("#variants").text().match('800')){
-          $("head").append("<style>strong,h1,h2,h3 { font-weight: 800; }");
+        else if(details.text().match('800')){
+          $("head").append("<style>.main strong,h1,h2,h3 { font-weight: 800; }");
         }
-        else if($("#variants").text().match('900')){
-          $("head").append("<style>strong,h1,h2,h3 { font-weight: 900; }");
+        else if(details.text().match('900')){
+          $("head").append("<style>.main strong,h1,h2,h3 { font-weight: 900; }");
         }
 
         // Save visited families
@@ -581,7 +589,7 @@ function runFont(family) {
         $(".link-history").click(function(){
           var dat = $(this).attr("data-family");
           runFont(dat);
-          $("#font").attr("placeholder",dat);
+          $("#font-search").attr("placeholder",dat);
 
           // remove first instance from array
           if ($.inArray(dat, visited) !== -1) {
@@ -603,20 +611,17 @@ function random() {
     $.each(json.items,function(i,type){
       if(i === random){
         var family = type.family;
-        $("#font").attr("placeholder", family);
+        $("#font-search").attr("placeholder", family);
         runFont(family);
       }
     });
   });
 }
 
-
-
 // Picks a random font on click
 $(".random").click(function(){
   random();
 });
-
 
 // Runs to fetch random font
 random();

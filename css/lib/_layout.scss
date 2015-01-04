@@ -10,17 +10,14 @@
 
 
 
-
-.main,.sidebar {
-  @include breakpoint(medium-up){ float: left; }
-}
 .main {
   padding-top: 2em;
+  max-width: 40em;
   @include breakpoint(medium-up){
+    float: left;
     width: 65%;
-    //margin-right: 5%;
     padding: 2em 5% 0 0;
-    border-right: .2em solid rgba($textColor,0.25);
+    //border-right: .2em solid rgba($textColor,0.25);
   }
 
 }
@@ -29,7 +26,9 @@
   font-size: 16px;
   font-family: $sans;
   padding-top: 2em;
+  background: rgba(#ddd,0.25);
   @include breakpoint(medium-up){
+    float: right;
     width: 30%;
     padding: 2em 2em 0;
     border-top: none;
