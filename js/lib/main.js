@@ -545,7 +545,7 @@ function runFont(family) {
         // Grabs family details
         details.append("<div class='detail-title horizontal'>Variants</div><div class='detail-data'>" + type.variants + "</div>");
         details.append("<div class='detail-title horizontal'>Subsets</div><div class='detail-data'>" + type.subsets + "</div>");
-        details.append("<div class='detail-title horizontal'>Version</div><duv class='detail-data'>" + type.version + "</div>");
+        details.append("<div class='detail-title horizontal'>Version</div><div class='detail-data'>" + type.version + "</div>");
         details.append("<div class='detail-title horizontal'>Last Modified</div><div class='detail-data'>" + type.lastModified + "</div>");
         details.append("<div class='detail-title'>HTML</div><div class='detail-data'><pre><code class='language-markup'>&lt;link href='"+familyCSS+"' rel='stylesheet' type='text/css'&gt;</code></pre></div>");
         details.append("<div class='detail-title'>CSS</div><div class='detail-data'><pre><code class='language-css'>font-family: '"+family+"', sans-serif;</code></pre></div>");

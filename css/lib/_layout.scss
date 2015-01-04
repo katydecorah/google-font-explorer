@@ -15,6 +15,7 @@
   @include breakpoint(medium-up){ float: left; }
 }
 .main {
+  padding-top: 2em;
   @include breakpoint(medium-up){
     width: 65%;
     //margin-right: 5%;
