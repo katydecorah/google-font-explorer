@@ -575,6 +575,10 @@ function runFont(family) {
         if(details.text().match('italic')){
           $("head").append("<style>.main em { font-style: italic; }");
         }
+        if(family.match('SC')){
+          $("head").append("<style>.main { font-variant: small-caps; }");
+        }
+
         if(details.text().match('700')){
           $("head").append("<style>.main strong,h1,h2,h3 { font-weight: 700; }");
         }
