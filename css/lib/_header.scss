@@ -1,7 +1,7 @@
 .header {
-  background: $textColor;
+  background: $header-bg;
   padding: 2em 0;
-  color: $bodyBackground;
+  color: $body-bg;
   @extend .clearfix;
   font-size: 1.5em;
 }
@@ -23,8 +23,7 @@ label {
   margin: 0.25em;
   display: block;
   &.active, &:hover {
-    color: white;
-    background: adjust-hue($blue,10deg);
+    color: $accent;
   }
 }
 .search-container {
@@ -40,7 +39,7 @@ label {
   width: 100%;
   margin: 0;
   font-size: 1em;
-  background: $blue;
+  background: $search-bg;
   border-radius: 0.25em;
   color: white;
   &::-webkit-input-placeholder {
@@ -48,7 +47,7 @@ label {
   }
   &:focus, &:hover {
     color: transparentize(white,0.5);
-    background: lighten($blue,3%);
+    background: lighten($search-bg,3%);
     outline: none;
   }
 }

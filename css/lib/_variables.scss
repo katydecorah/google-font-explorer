@@ -1,17 +1,19 @@
-$textColor:       #333;
-$bodyBackground:  #fafafa;
-$sidebar-bg:       #f2f2f2;
-$red:             #f20;
-$blue:            darken(complement($red),15%);
-$link-color:      #007f93;
+$text-color:      #333;
+$body-bg:         #ecf0f1;
+$header-bg:       #2c3e50;
+$sidebar-bg:      #ffffff;
+$search-bg:       #34495e;
+$accent:          #f39c12;
+$red:             #c0392b;
+$link-color:      #8e44ad;
 $sans:            "Helvetica Neue","Arial", sans-serif;
-$container:       1100px;
+$container-width:       1100px;
 
-$dropdownBackground:      darken($bodyBackground,5%);
-$dropdownBorder:          darken($dropdownBackground,10%);
-$dropdownLinkColor:       lighten($textColor,20%);
-$dropdownLinkColorHover:  $textColor;
-$dropdownLinkColorActive: $red;
+$dropdown-background:      darken($body-bg,5%);
+$dropdown-border:          darken($dropdown-background,10%);
+$dropdown-link-color:       lighten($text-color,20%);
+$dropdown-link-color-hover:  $text-color;
+$dropdown-link-color-active: $red;
 
 
 .clearfix {
@@ -28,10 +30,10 @@ $dropdownLinkColorActive: $red;
 
 @mixin breakpoint($point) {
   @if $point == large {
-    @media (min-width: $container) { @content; }
+    @media (min-width: $container-width) { @content; }
   }
   @else if $point == medium {
-    @media (max-width: $container + 30px) { @content; }
+    @media (max-width: $container-width + 30px) { @content; }
   }
   @else if $point == medium-up {
     @media (min-width: 800px ) { @content; }

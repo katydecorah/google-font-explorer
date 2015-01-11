@@ -1,5 +1,5 @@
 .container {
-  max-width: $container;
+  max-width: $container-width;
   margin: 0 auto;
   position: relative;
   @extend .clearfix;
@@ -17,20 +17,19 @@
     float: left;
     width: 65%;
     padding: 2em 5% 0 0;
-    //border-right: .2em solid rgba($textColor,0.25);
+    //border-right: .2em solid rgba($text-color,0.25);
   }
 
 }
 .sidebar {
-  border-top: .2em solid rgba($textColor,0.25);
+  border-top: .2em solid rgba($text-color,0.25);
   font-size: 16px;
   font-family: $sans;
-  padding-top: 2em;
-  background: rgba(#ddd,0.25);
+  padding: 2em;
+  background: $sidebar-bg;
   @include breakpoint(medium-up){
     float: right;
     width: 30%;
-    padding: 2em 2em 0;
     border-top: none;
   }
 }
@@ -58,7 +57,7 @@
 
 .btn {
   display: inline-block;
-  background: $link-color;
+  background: darken($accent,5%);
   padding: 0.3em 0.75em;
   color: white;
   //font-size: 1.25em;
@@ -66,7 +65,7 @@
   border-radius: 0.2em;
   &:hover {
     color: white;
-    background: adjust-hue($link-color,10deg);
+    background: adjust-hue(darken($accent,5%),10deg);
   }
 }
 

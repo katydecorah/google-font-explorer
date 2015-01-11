@@ -26,9 +26,9 @@
   padding: 5px 0;
   margin: 2px 0 0; // override default ul
   list-style: none;
-  background-color: $dropdownBackground;
+  background-color: $dropdown-background;
   border: 1px solid #ccc; // Fallback for IE7-8
-  border: 1px solid $dropdownBorder;
+  border: 1px solid $dropdown-border;
   border-radius:6px;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
   background-clip: padding-box;
@@ -39,7 +39,7 @@
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
-    color: $dropdownLinkColor;
+    color: $dropdown-link-color;
     white-space: nowrap;
     font-family:"Helvetica Neue","Arial", sans-serif;
   }
@@ -52,7 +52,7 @@
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
   text-decoration: none;
-  color: $dropdownLinkColorHover;
+  color: $dropdown-link-color-hover;
 }
 
 // Active state
@@ -61,7 +61,7 @@
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   text-decoration: none;
-  background:$bodyBackground;
-  color:$textColor;
+  background:$body-bg;
+  color:$text-color;
   outline: 0;
 }
