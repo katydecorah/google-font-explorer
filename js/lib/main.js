@@ -560,6 +560,7 @@ function runFont(family) {
             $(document.createElement('li')).text(item)
           );
         });
+        details.append("<div class='detail-title horizontal'>Category</div><div class='detail-data'>" + type.category + "</div>");
         details.append("<div class='detail-title horizontal'>Version</div><div class='detail-data'>" + type.version + "</div>");
         details.append("<div class='detail-title horizontal'>Last Modified</div><div class='detail-data'>" + type.lastModified + "</div>");
         details.append("<div class='detail-title'>HTML</div><div class='detail-data'><pre><code class='language-markup'>&lt;link href='"+familyCSS+"' rel='stylesheet' type='text/css'&gt;</code></pre></div>");
