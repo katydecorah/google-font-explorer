@@ -1,4 +1,4 @@
-[Google Font Explorer](http://katydecorah.com/googlefontexplorer/)
+[Google Font Explorer](http://katydecorah.com/google-font-explorer/)
 ==================
 
 Preview [Google Fonts](http://www.google.com/fonts) better! You can test any Google Font family by typing it in. You can edit the lorem ipsum. You can even randomize to find a new family. The info button will give you the link href.
