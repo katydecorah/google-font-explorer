@@ -35,7 +35,7 @@ function runFont(family) {
     $.each(json.items,function(i,type){
       if (type.family === family) {
         var familyPlus = family.replace(/\s/g, '+');
-        var familyCSS = "http://fonts.googleapis.com/css?family=" + familyPlus + ":" + type.variants + "";
+        var familyCSS = "https://fonts.googleapis.com/css?family=" + familyPlus + ":" + type.variants + "";
         var details = $("#variants");
 
         // Removes previous family and style
@@ -61,7 +61,7 @@ function runFont(family) {
         details.append("<div class='detail-title horizontal'>Last Modified</div><div class='detail-data'>" + type.lastModified + "</div>");
         details.append("<div class='detail-title'>HTML</div><div class='detail-data'><pre><code class='language-markup'>&lt;link href='"+familyCSS+"' rel='stylesheet' type='text/css'&gt;</code></pre></div>");
         details.append("<div class='detail-title'>CSS</div><div class='detail-data'><pre><code class='language-css'>font-family: '"+family+"', sans-serif;</code></pre></div>");
-        details.append("<a href='http://www.google.com/fonts#UsePlace:use/Collection:"+familyPlus+"' class='btn'>View on Google Fonts &rarr;</a>");
+        details.append("<a href='https://fonts.google.com/specimen/"+familyPlus+"' class='btn'>View on Google Fonts &rarr;</a>");
 
         // Grabs the Google Font
         $("head").append("<link href='"+ familyCSS +"' rel='stylesheet' type='text/css' class='style'>");
