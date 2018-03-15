@@ -539,7 +539,7 @@ function runFont(family) {
     $.each(json.items,function(i,type){
       if (type.family === family) {
         var familyPlus = family.replace(/\s/g, '+');
-        var familyCSS = "http://fonts.googleapis.com/css?family=" + familyPlus + ":" + type.variants + "";
+        var familyCSS = "https://fonts.googleapis.com/css?family=" + familyPlus + ":" + type.variants + "";
         var details = $("#variants");
 
         // Removes previous family and style
