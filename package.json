@@ -1,5 +1,5 @@
 {
-  "name": "googlefontexplorer",
+  "name": "google-font-explorer",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "^1.0.2",
@@ -8,5 +8,20 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0"
-  }
+  },
+  "description": "Preview Google Fonts",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katydecorah/google-font-explorer.git"
+  },
+  "author": "Katy DeCorah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katydecorah/google-font-explorer/issues"
+  },
+  "homepage": "https://github.com/katydecorah/google-font-explorer#readme"
 }
