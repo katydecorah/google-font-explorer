@@ -2,20 +2,21 @@
   box-sizing: border-box;
 }
 
-
-
 body {
   font-family: $sans;
   font-weight: 400;
   line-height: 1.45;
-  @include breakpoint(medium-up) { font-size: 18px; }
+  @include breakpoint(medium-up) {
+    font-size: 18px;
+  }
   font-size: 14px;
   color: $text-color;
   background: $body-bg;
-
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 1.414em 0 0.5em;
   font-weight: inherit;
   line-height: 1.2;
@@ -26,29 +27,46 @@ h1 {
   font-size: 3.157em;
 }
 
-h2 {font-size: 2.369em;}
+h2 {
+  font-size: 2.369em;
+}
 
-h3 {font-size: 1.777em;}
+h3 {
+  font-size: 1.777em;
+}
 
-small, .font_small {font-size: 0.75em;}
+small,
+.font_small {
+  font-size: 0.75em;
+}
 
-em, strong { font-style: normal}
+em,
+strong {
+  font-style: normal;
+}
 
 a {
   text-decoration: none;
   color: $link-color;
   &:hover {
-    color: lighten($link-color,5%);
+    color: lighten($link-color, 5%);
   }
 }
 
-p { margin-bottom: 1.3em;}
-ol, ul {
+p {
+  margin-bottom: 1.3em;
+}
+ol,
+ul {
   @extend p;
   margin-left: 2em;
 }
-ol { list-style: decimal;}
-ul { list-style: square; }
+ol {
+  list-style: decimal;
+}
+ul {
+  list-style: square;
+}
 
 ::selection {
   background: $accent;

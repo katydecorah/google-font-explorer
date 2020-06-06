@@ -2,11 +2,11 @@
   "name": "google-font-explorer",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "^1.0.4",
+    "grunt": "^1.1.0",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0"
   },
   "description": "Preview Google Fonts",

@@ -1,16 +1,12 @@
-
-
 //
 // Dropdown menus
 // --------------------------------------------------
-
 
 // Use the .menu class on any <li> element within the topbar or ul.tabs and you'll get some superfancy dropdowns
 .dropup,
 .dropdown {
   position: relative;
 }
-
 
 // The dropdown menu (ul)
 // ----------------------
@@ -21,7 +17,7 @@
   z-index: 100;
   display: none; // none by default, but block on "open" of the menu
   float: left;
-  font-size:0.8em;
+  font-size: 0.8em;
   min-width: 10em;
   padding: 5px 0;
   margin: 2px 0 0; // override default ul
@@ -29,8 +25,8 @@
   background-color: $dropdown-background;
   border: 1px solid #ccc; // Fallback for IE7-8
   border: 1px solid $dropdown-border;
-  border-radius:6px;
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-clip: padding-box;
 
   // Links within the dropdown menu
@@ -41,7 +37,7 @@
     font-weight: normal;
     color: $dropdown-link-color;
     white-space: nowrap;
-    font-family:"Helvetica Neue","Arial", sans-serif;
+    font-family: "Helvetica Neue", "Arial", sans-serif;
   }
 }
 
@@ -61,7 +57,7 @@
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   text-decoration: none;
-  background:$body-bg;
-  color:$text-color;
+  background: $body-bg;
+  color: $text-color;
   outline: 0;
 }

@@ -8,46 +8,42 @@
   }
 }
 
-
-
 .main {
   padding-top: 2em;
   max-width: 40em;
-  @include breakpoint(medium-up){
+  @include breakpoint(medium-up) {
     float: left;
     width: 65%;
     padding: 2em 5% 0 0;
     //border-right: .2em solid rgba($text-color,0.25);
   }
-
 }
 .sidebar {
-  border-top: .2em solid rgba($text-color,0.25);
+  border-top: 0.2em solid rgba($text-color, 0.25);
   font-size: 14px;
   font-family: $sans;
   padding: 2em;
   background: $sidebar-bg;
-  @include breakpoint(medium-up){
+  @include breakpoint(medium-up) {
     float: right;
     width: 30%;
     border-top: none;
   }
 }
 
-
-
 .detail-title {
   font-weight: bold;
   width: 8em;
   &.horizontal {
-    @include breakpoint(medium-up) { float: left; }
+    @include breakpoint(medium-up) {
+      float: left;
+    }
   }
 }
 .detail-data {
   margin: 0 0 1em 0;
   word-wrap: break-word;
 }
-
 
 .colophon {
   margin: 2em 0;
@@ -57,7 +53,7 @@
 
 .btn {
   display: inline-block;
-  background: darken($accent,5%);
+  background: darken($accent, 5%);
   padding: 0.3em 0.75em;
   color: white;
   //font-size: 1.25em;
@@ -65,7 +61,7 @@
   border-radius: 0.2em;
   &:hover {
     color: white;
-    background: adjust-hue(darken($accent,5%),10deg);
+    background: adjust-hue(darken($accent, 5%), 10deg);
   }
 }
 
